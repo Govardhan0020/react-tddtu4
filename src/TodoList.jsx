@@ -17,14 +17,14 @@ const TodoList = () => {
     if (!data) {
       alert('please fill the input box ');
     } else if (data && toggleBtn) {
-      setList(
-        list.map((item) => {
+      
+       let updated =  list.map((item) => {
           if (item.id === EditId) {
             return { ...item, title: data };
           }
           return item;
         })
-      );
+      setList(updated)
       setData('');
       setEditId(null);
       setToggleBtn(false);
